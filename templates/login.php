@@ -10,6 +10,8 @@
                         </div>
                         <div class="p-4">
                             <form method="POST" action="">
+
+                                <!-- Error message -->
                                 <?php if(isset($errorMessage)) { ?>
                                     <div class="alert alert-danger" role="alert">
                                         <div>
@@ -17,19 +19,27 @@
                                         </div>
                                     </div>
                                 <?php } ?>
+
+                                <!-- Username input -->
                                 <div class="input-group mb-3">
                                     <span class="input-group-text bg-primary"><i
                                             class="bi bi-person-plus-fill text-white"></i></span>
                                     <input name="username" type="text" class="form-control" placeholder="Username">
                                 </div>
+
+                                <!-- Password input -->
                                 <div class="input-group mb-3">
                                     <span class="input-group-text bg-primary"><i
                                             class="bi bi-key-fill text-white"></i></span>
                                     <input name="password" type="password" class="form-control" placeholder="Password">
                                 </div>
+
+                                <!-- Submit button -->
                                 <div class="d-grid col-12 mx-auto">
-                                    <button name="signup" class="btn btn-primary" type="submit"><span></span> Login</button>
+                                    <button class="btn btn-primary" type="submit"><span></span> Login</button>
                                 </div>
+
+                                <!-- Sign up link -->
                                 <p class="text-center mt-5">Don't have an account?
                                     <span class="text-primary"><a href="./signup.php">Sign up</span>
                                 </p>

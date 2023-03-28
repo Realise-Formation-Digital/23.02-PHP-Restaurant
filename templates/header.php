@@ -45,10 +45,13 @@ session_start();
                     <li><a href="./ingredients.html">Ingredients</a></li>
                     <li><a href="./menu.html">Menu</a></li>
                     <li><a href="./reviews.html">Reviews</a></li>
+                    <!-- Show links to login and signup if not connected -->
                     <?php if (!isset($_SESSION["isConnected"]) || !$_SESSION["isConnected"]) { ?>
                         <li><a href="../templates/login.php">Login</a></li>
                         <li><a href="../templates/signup.php">Signup</a></li>
                     <?php } ?>
+
+                    <!-- Show links to private page and logout if connected -->
                     <?php if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"]) { ?>
                         <li><a href="../templates/private.php">Private</a></li>
                         <li><a href="../logic_php/logout.php">Logout</a></li>
