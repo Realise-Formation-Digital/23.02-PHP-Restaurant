@@ -1,0 +1,30 @@
+
+/* Reviews-fellec Section */
+#Reviews-fellec{
+    background: #333 url(../img/bg.png) center;
+    /* fixed center no-repeat; */
+    min-height: 600px;
+    color: #fff;
+    background-size: cover;
+    font-family: 'Georgia';
+    font-size: 20px;
+    font-weight: thin;
+}
+
+
+#Reviews-text-bg{
+    background-color: rgba(0, 0, 0, 0.801);
+    padding: 50px;
+    text-align: center;
+}
+.container-fellec {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+#gros-guillemets {
+    font-size: 66px;
+}

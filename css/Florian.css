@@ -1,0 +1,45 @@
+/* Police d'écriture de titre*/
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Rosmatika', sans-serif;
+}
+
+
+.boxflo {
+    position: relative;
+    color: #fff;
+    /* opacity: .5; */
+    padding: 8.5%;
+    margin-top: 15%;
+    width: 60%;
+    background: rgba(0, 0, 0, 0.5);
+    /* padding-bottom: 5px; */
+    /* vertical-align: middle; */
+}
+
+.ingredient-pic-flo {
+    margin: 10px 10px;
+    /* border-style: solid; */
+    /* background-color : rgba(0, 0, 0, 255); */
+}
+
+.bg-image-flo {
+    /* margin:0; */
+    /* position:relative; */
+    width: 100%;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 750px;
+    padding-bottom: 20px;
+     
+
+    /* overflow: hidden; */
+}
+
+
+p {
+    font-family: 'Overloaded', sans-serif; 
+    font-size:large ; 
+}                                             
