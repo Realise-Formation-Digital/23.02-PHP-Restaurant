@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,9 +45,14 @@
                     <li><a href="./ingredients.html">Ingredients</a></li>
                     <li><a href="./menu.html">Menu</a></li>
                     <li><a href="./reviews.html">Reviews</a></li>
-                    <li><a href="../templates/login.php">Login</a></li>
-                    <li><a href="../templates/signup.php">Signup</a></li>
-                    <li><a href="../templates/private.php">Private</a></li>
+                    <?php if (!isset($_SESSION["isConnected"]) || !$_SESSION["isConnected"]) { ?>
+                        <li><a href="../templates/login.php">Login</a></li>
+                        <li><a href="../templates/signup.php">Signup</a></li>
+                    <?php } ?>
+                    <?php if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"]) { ?>
+                        <li><a href="../templates/private.php">Private</a></li>
+                        <li><a href="../logic_php/logout.php">Logout</a></li>
+                    <?php } ?>
                     <li><a href="#" class="fa fa-twitter"></a></li>
                     <li><a href="#" class="fa fa-youtube"></a></li>
                     <li><a href="#" class="fa fa-facebook"></a></li>
