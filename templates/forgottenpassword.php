@@ -21,7 +21,16 @@
                                             <?php echo($errorMessage); ?>
                                         </div>
                                     </div>
-                                <?php } ?>                                
+                                <?php } ?>   
+                                
+                                <!-- Confirmation message -->
+                                <?php if(isset($confirmationMessage)) { ?>
+                                    <div class="alert alert-success" role="alert">
+                                        <div>
+                                            <?php echo($confirmationMessage); ?>
+                                        </div>
+                                    </div>
+                                <?php } ?>
 
                                 <!-- Username or e-mail input -->
                                 <div class="input-group mb-3">
