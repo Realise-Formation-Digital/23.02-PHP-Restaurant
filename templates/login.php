@@ -1,5 +1,8 @@
-<?php require_once('../templates/header.php') ?>
-<?php require_once('../logic_php/login.php') ?>
+<?php 
+    session_start();
+    require_once('../logic_php/login.php');
+    require_once('../templates/header.php');
+?>
     <main>
     <div class="container-fluid">
             <div class="mt-5 mb-5">

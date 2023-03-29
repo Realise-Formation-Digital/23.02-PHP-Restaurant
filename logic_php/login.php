@@ -18,6 +18,8 @@ if (isset($_POST['username']) && isset($_POST['password'])){
         //Test if username and password in users.csv
         if(($userCSV[0] === $username) && ($userCSV[2] === $password)){
             $_SESSION["isConnected"] = true;
+            $_SESSION["username"] = $userCSV[0];
+            $_SESSION["email"] = $userCSV[1];
             $isConnected = true;
             break;
         }  
@@ -27,13 +29,13 @@ if (isset($_POST['username']) && isset($_POST['password'])){
 
     //If not connected, unset session variable isConnected et initialiser un message d'erreur
     if (!$isConnected) {
-        unset($_SESSION["isConnected"]);
+        session_destroy();
         $errorMessage = "<strong>Login error !</strong> The username or the password are incorrect.";
     
     //If connected, redirect to page private
     } else {
-        echo("<script>window.location.replace('../templates/private.php')</script>");
-        exit();
+      header("Location: ../templates/private.php");
+      exit();
     }
 
 }
