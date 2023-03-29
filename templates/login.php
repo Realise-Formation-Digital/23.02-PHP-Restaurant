@@ -43,8 +43,13 @@
                                 </div>
 
                                 <!-- Sign up link -->
-                                <p class="text-center mt-5">Don't have an account?
-                                    <span class="text-primary"><a href="./signup.php">Sign up</span>
+                                <p class="text-center mt-5">Don't have an account ?
+                                    <span class="text-primary"><a href="./signup.php">Sign up</a></span>
+                                </p>
+
+                                <!-- Forgotten password link -->
+                                <p class="text-center mt-1">Forgotten password ?
+                                    <span class="text-primary"><a href="./forgottenpassword.php">New password</a></span>
                                 </p>
                             </form>
                         </div>
