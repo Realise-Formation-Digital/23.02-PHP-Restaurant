@@ -1,6 +1,24 @@
 <?php
 
-if (isset($_POST['usernameEmail'])){
+use PHPMailer\PHPMailer\PHPMailer;
+require '../vendor/autoload.php';
+
+function sendEmail($email, $username) {  
+    $mail = new PHPMailer();
+    $mail->isSendmail();
+    $mail->addAddress($email, $username);
+    $mail->setFrom('info@resto-realise.ch', 'Resto-Réalise');
+    $mail->addReplyTo('info@resto-realise.ch', 'Resto-Réalise');
+    $mail->isHTML(true);
+    $mail->Subject = "New password in Resto-Réalise";
+    $mail->Body = 'Mail body in HTML<br>';
+    $mail->AltBody = 'This is the plain text version of the email content';
+    if (!$mail->send()) {
+        echo("Email coudn't be sent $mail->ErrorInfo");
+    }
+}
+
+if (isset($_POST['usernameEmail'])) {
 
     //Recover username or email
     $usernameEmail = $_POST['usernameEmail'];
@@ -8,13 +26,13 @@ if (isset($_POST['usernameEmail'])){
 
     $newUsers = [];
     //Récupérer le fichier csv users.csv et vérifier qu'il existe (lecture seule)
-    if (($usersCSV = fopen("../data/users.csv", "r")) !== FALSE){
+    if (($usersCSV = fopen("../data/users.csv", "r")) !== FALSE) {
     
         //Get CSV line until end
-        while (($userCSV = fgetcsv($usersCSV, null, ";", '"')) !== FALSE){  
+        while (($userCSV = fgetcsv($usersCSV, null, ";", '"')) !== FALSE) {  
         
             //Test si username ou e-mail dans users.csv
-            if(($userCSV[0] === $usernameEmail) || ($userCSV[1] === $usernameEmail)){
+            if (($userCSV[0] === $usernameEmail) || ($userCSV[1] === $usernameEmail)) {
                 $userExist = true;
 
                 //Ajouter dans la colonne forgotten_password_token un token
@@ -25,11 +43,7 @@ if (isset($_POST['usernameEmail'])){
                 $newUsers[] = $userCSV;
 
                 //envoyer un email avec l'adresse: http://127.0.0.1:8999/templates/newpassword.php?token=$token
-                $isEmailSent = mail(
-                    $userCSV[1],
-                    "Create new password in Resto-Réalise",
-                    "https://127.0.0.1:8999/templates/newpassword.php?token=".$token,
-                );
+                sendEmail($userCSV[1], $userCSV[0]);
             } else {
                 $newUsers[] = $userCSV;
             }
@@ -37,22 +51,9 @@ if (isset($_POST['usernameEmail'])){
       fclose($usersCSV);
     }
 
-    
-
-    if(!$userExist) {
+    if (!$userExist) {
         $errorMessage = "User does not exist.";
-    } 
-    
-    /*
-    elseif(!$isEmailSent) {
-        $errorMessage = "Email coudn't be sent";
-    } 
-    */
-    
-    else {
-        //ajouter un message de confirmation
-        $confirmationMessage = "An e-mail has been sent for a new password.";
-
+    } else {
         //Récupérer le fichier csv users.csv et vérifier qu'il existe (lecture et écriture)
         if (($usersCSV = fopen("../data/users.csv", "r+")) !== FALSE){
         
@@ -63,5 +64,9 @@ if (isset($_POST['usernameEmail'])){
 
             fclose($usersCSV);
         }
+
+        //ajouter un message de confirmation
+        $confirmationMessage = "An e-mail has been sent for a new password.";
+
     }
 }
