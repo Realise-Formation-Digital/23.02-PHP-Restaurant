@@ -1,6 +1,8 @@
-<?php require_once('../templates/header.php') ?>
-<?php require_once('../logic_php/private.php') ?>
-
+<?php 
+    session_start();
+    require_once('../logic_php/private.php');
+    require_once('../templates/header.php');
+?>
 
     <main>
         <h1 class="text-center mb-3 mt-5">Welcome to your Page !</h1><br>
