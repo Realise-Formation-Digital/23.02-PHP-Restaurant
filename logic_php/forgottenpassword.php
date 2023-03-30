@@ -3,6 +3,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 require '../vendor/autoload.php';
 
+/**
+ * Fonction pour envoyer un e-mail sur maildev (http://127.0.0.1:1080)
+ */
 function sendEmail($email, $username, $token) {  
     $mail = new PHPMailer();
     $mail->isSMTP();
@@ -65,12 +68,15 @@ if (isset($_POST['usernameEmail'])) {
     } elseif($emailError !== "") {
         $errorMessage = "<strong>Email coudn't be sent</strong> $emailError";
     } else {
+
+        file_put_contents("../data/users.csv", "");
         //Récupérer le fichier csv users.csv et vérifier qu'il existe (lecture et écriture)
-        if (($usersCSV = fopen("../data/users.csv", "r+")) !== FALSE){
+        if (($usersCSV = fopen("../data/users.csv", "c+")) !== FALSE){
+            file_put_contents($usersCSV, "");
         
             //Boucler dans newUsers et ajouter au CSV
             foreach($newUsers as $user){
-                fputcsv($usersCSV, $user, ';', '"');
+                fputcsv($usersCSV, $user, ';');
             }
 
             fclose($usersCSV);

@@ -3,7 +3,7 @@
 if (isset($_POST['username']) && isset($_POST['password'])){
 
     //Recover username and password
-    $username = $_POST['username'];
+    $username = htmlspecialchars($_POST['username']);
     $password = md5($_POST['username'], false);
 
     //set isConnected as false to begin
