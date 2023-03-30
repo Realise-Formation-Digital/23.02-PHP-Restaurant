@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
     <!--Police Rosmatika regular pour le Titres et Overloaded Regular pour le reste, ajouter les liens-->
     <!--Pour Information: Couleur de carte des plats (doré) : cf9e00-->
@@ -41,9 +42,17 @@
                     <li><a href="./ingredients.html">Ingredients</a></li>
                     <li><a href="./menu.html">Menu</a></li>
                     <li><a href="./reviews.html">Reviews</a></li>
-                    <li><a href="../templates/login.php">Login</a></li>
-                    <li><a href="../templates/signup.php">Signup</a></li>
-                    <li><a href="../templates/private.php">Private</a></li>
+                    <!-- Show links to login and signup if not connected -->
+                    <?php if (!isset($_SESSION["isConnected"]) || !$_SESSION["isConnected"]) { ?>
+                        <li><a href="../templates/login.php">Login</a></li>
+                        <li><a href="../templates/signup.php">Signup</a></li>
+                    <?php } ?>
+
+                    <!-- Show links to private page and logout if connected -->
+                    <?php if (isset($_SESSION["isConnected"]) && $_SESSION["isConnected"]) { ?>
+                        <li><a href="../templates/private.php">Private</a></li>
+                        <li><a href="../logic_php/logout.php">Logout</a></li>
+                    <?php } ?>
                     <li><a href="#" class="fa fa-twitter"></a></li>
                     <li><a href="#" class="fa fa-youtube"></a></li>
                     <li><a href="#" class="fa fa-facebook"></a></li>

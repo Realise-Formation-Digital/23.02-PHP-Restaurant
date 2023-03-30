@@ -1,18 +1,3 @@
-user;CFmail;md5 password;forgotten_password_token
-flo;hdjjwjb@gmm.cf;e10adc3949ba59abbe56e057f20f883e;1680089645
-flo;hdjjwjb@gmm.cf.cf;fa52824ffe98c077de97078154ad09fe;1680092318
-flo;hdjjwjb@gmm.cf.cf;b7c25fc37f23767029042320a5724ab0;1680092954
-flo;fdggag@sdsfs.cg;b7c25fc37f23767029042320a5724ab0;1680093209
-flo;fdggag@sdsfs.cg;b7c25fc37f23767029042320a5724ab0;1680093407
-flo;hdjjwjb@gmm.cf;b7c25fc37f23767029042320a5724ab0;1680095809
-flo;hdjjwjb@gmm.cf;b7c25fc37f23767029042320a5724ab0;1680097617
-abc;ddddd@fddd.cv;fa52824ffe98c077de97078154ad09fe;29-03-2023
-flo;ddddd@fddd.cv;b7c25fc37f23767029042320a5724ab0;29-03-2023
-fdgfd;ddddd@fddd.cv;b7c25fc37f23767029042320a5724ab0;29-03-2023
-flo;hdjjwjb@gmm.cf;8af3982673455323883c06fa59d2872a;1680158032
-abc;hdjjwjb@gmm.cf;fa52824ffe98c077de97078154ad09fe;1680158082
-flo;hdjjwjb@gmm.cf;b7c25fc37f23767029042320a5724ab0;1680158450
-abcd;ddddd@fddd.cv;b7c25fc37f23767029042320a5724ab0;1680158589
-fbavbfj;ddddd@fddd.cv;1c055c5993c7232ac3c4a0a930ceaf85;1680158662
-flo;ddddd@fddd.cv;b7c25fc37f23767029042320a5724ab0;1680158867
-flo;florianandco@gmail.com;ijfojoiwfj;jndskjn
+username;email;password;forgotten_password_token
+Florian;flo@gmail.com;c888d14bb04541a068da5a13b58449a7;
+Félicien;felicien@champis.net;e10adc3949ba59abbe56e057f20f883e;
