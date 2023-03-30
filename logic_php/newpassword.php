@@ -44,12 +44,11 @@ if (isset($_POST['newPassword']) && isset($_POST['token'])) {
         $errorMessage = "Error, password not updated.";
     } else {
         //Récupérer le fichier csv users.csv et vérifier qu'il existe (lecture et écriture)
-        if (($usersCSV = fopen("../data/users.csv", "r+")) !== FALSE){
+        if (($usersCSV = fopen("../data/users.csv", "w")) !== FALSE){
         
             //Boucler dans newUsers et ajouter au CSV
             foreach($newUsers as $user){
                 fputcsv($usersCSV, $user, ';');
-                var_dump($user);
             }
 
             fclose($usersCSV);
