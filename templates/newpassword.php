@@ -38,7 +38,7 @@
                                 <!-- New password -->
                                 <div class="input-group mb-3">
                                     <span class="input-group-text bg-primary"><i
-                                            class="bi bi-person-plus-fill text-white"></i></span>
+                                            class="bi bi-key-fill text-white"></i></span>
                                     <input name="newPassword" type="text" class="form-control" placeholder="New password">
                                 </div>
 
