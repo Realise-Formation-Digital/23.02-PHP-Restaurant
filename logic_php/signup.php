@@ -1,5 +1,3 @@
-
-
 <?php
 
 if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])) {
@@ -30,7 +28,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
             //Test if email in users.csv already exists
             if ($userCSV[1] === $email) {
                 $hasError = true;
-                $err_mail_exists = 'This email already has an account';
+                $err_mail_exists = 'This email already has an account, please go to login';
                 fclose($List_CSV);
                 break;
             }
@@ -38,7 +36,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
             //Test if username in users.csv already exists
             if ($userCSV[0] === $username) {
                 $hasError = true;
-                $err_usr_exists = 'This username already exists';
+                $err_usr_exists = 'This username already exists, please go to login';
                 fclose($List_CSV);
                 break;
             }
@@ -50,5 +48,9 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
         $fp = fopen('../data/users.csv', 'a');
         fputcsv($fp, $data, ';');
         fclose($fp);
+
+        //Redirection to login
+        header("Location: ../templates/login.php");
+        exit();
     }
 }
