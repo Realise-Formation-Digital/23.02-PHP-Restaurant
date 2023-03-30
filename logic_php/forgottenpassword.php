@@ -3,19 +3,27 @@
 use PHPMailer\PHPMailer\PHPMailer;
 require '../vendor/autoload.php';
 
-function sendEmail($email, $username) {  
+function sendEmail($email, $username, $token) {  
     $mail = new PHPMailer();
-    $mail->isSendmail();
+    $mail->isSMTP();
+    $mail->Host = "maildev";
+    $mail->Port = 1025;
+    $mail->CharSet = 'UTF-8';
+    $mail->Encoding = 'base64';
     $mail->addAddress($email, $username);
     $mail->setFrom('info@resto-realise.ch', 'Resto-Réalise');
     $mail->addReplyTo('info@resto-realise.ch', 'Resto-Réalise');
     $mail->isHTML(true);
     $mail->Subject = "New password in Resto-Réalise";
-    $mail->Body = 'Mail body in HTML<br>';
-    $mail->AltBody = 'This is the plain text version of the email content';
+    $mail->Body =   "<strong>Hello $username,</strong><br><br>
+                    If you want a new password, go to <a href=\"http://127.0.0.1:8999/templates/newpassword.php?token=$token\">http://127.0.0.1:8999/templates/newpassword.php?token=$token</a><br><br>
+                    Your Resto-Réalise...";
+    $mail->AltBody = "Hello $username, if you want a new password, go to http://127.0.0.1:8999/templates/newpassword?token=$token";
     if (!$mail->send()) {
-        echo("Email coudn't be sent $mail->ErrorInfo");
+        return $mail->ErrorInfo;
     }
+
+    return "";
 }
 
 if (isset($_POST['usernameEmail'])) {
@@ -23,6 +31,7 @@ if (isset($_POST['usernameEmail'])) {
     //Recover username or email
     $usernameEmail = $_POST['usernameEmail'];
     $userExist = false;
+    $emailError = "";
 
     $newUsers = [];
     //Récupérer le fichier csv users.csv et vérifier qu'il existe (lecture seule)
@@ -43,7 +52,7 @@ if (isset($_POST['usernameEmail'])) {
                 $newUsers[] = $userCSV;
 
                 //envoyer un email avec l'adresse: http://127.0.0.1:8999/templates/newpassword.php?token=$token
-                sendEmail($userCSV[1], $userCSV[0]);
+                $emailError = sendEmail($userCSV[1], $userCSV[0], $token);
             } else {
                 $newUsers[] = $userCSV;
             }
@@ -53,6 +62,8 @@ if (isset($_POST['usernameEmail'])) {
 
     if (!$userExist) {
         $errorMessage = "User does not exist.";
+    } elseif($emailError !== "") {
+        $errorMessage = "<strong>Email coudn't be sent</strong> $emailError";
     } else {
         //Récupérer le fichier csv users.csv et vérifier qu'il existe (lecture et écriture)
         if (($usersCSV = fopen("../data/users.csv", "r+")) !== FALSE){
