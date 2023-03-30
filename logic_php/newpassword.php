@@ -48,7 +48,7 @@ if (isset($_POST['newPassword']) && isset($_POST['token'])) {
         
             //Boucler dans newUsers et ajouter au CSV
             foreach($newUsers as $user){
-                fputcsv($usersCSV, $user, ';', '"');
+                fputcsv($usersCSV, $user, ';');
                 var_dump($user);
             }
 

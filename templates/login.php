@@ -11,6 +11,9 @@
                         <div class="text-center">
                             <h3 class="text-primary">Login</h3>
                         </div>
+                        <p style="text-align:center;">
+                            <img src="../img/dividergold.png" class="gold-divider" width="50%">
+                        </p>
                         <div class="p-4">
                             <form method="POST" action="">
 
