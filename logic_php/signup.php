@@ -20,29 +20,20 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
 
 
     //Get csv file users.csv
-    $List_CSV = fopen("../data/users.csv", "r");
-    if (($List_CSV) !== FALSE) {
+    if (($List_CSV = fopen("../data/users.csv", "r")) !== FALSE) {
         //Read CSV file until the end
-
-        $userCSV = fgetcsv($List_CSV, null, ";");
-
-        while (($userCSV) !== FALSE) {
-
+        while (($userCSV = fgetcsv($List_CSV, null, ";")) !== FALSE) {
 
             //Test if email in users.csv already exists
             if ($userCSV[1] === $email) {
                 $err_mail_exists = 'This email already has an account';
-                echo ("email");
-                $nok = true;
-                fclose($List_SV);
+                fclose($List_CSV);
                 break;
             }
 
             //Test if username in users.csv already exists
-            else if ($userCSV[0] === $username) {
+            if ($userCSV[0] === $username) {
                 $err_usr_exists = 'This username already exists';
-                echo ("username");
-                $nok = true;
                 fclose($List_CSV);
                 break;
             }
@@ -50,7 +41,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
         
 
     } else {
-        $data = [$username, $email, md5($password)];
+        $data = [$username, $email, md5($password), ""];
         $fp = fopen('../data/users.csv', 'a');
         fputcsv($fp, $data, ';');
         fclose($fp);
