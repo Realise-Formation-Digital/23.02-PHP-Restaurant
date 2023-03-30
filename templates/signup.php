@@ -32,6 +32,9 @@ Formulaire html
                             <?php if(isset($errmail)) { ?>
                                 <h4 class="alert alert-danger" role="alert"><?php echo($err_usr_exists) ?></h4>
                             <?php } ?>
+                            <?php if(isset($errmail)) { ?>
+                                <h4 class="alert alert-danger" role="alert"><?php echo($err_mail_exists) ?></h4>
+                            <?php } ?>
                         </div>
                         <div class="p-4">
                             <form method="POST" action="">
