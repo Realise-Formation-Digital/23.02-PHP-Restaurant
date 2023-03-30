@@ -1,8 +1,8 @@
-<?php require_once('../templates/header.php') ?>
-
-<?php require_once('../logic_php/signup.php') ?>
-
-
+<?php 
+    session_start();
+    require_once('../logic_php/signup.php');
+    require_once('../templates/header.php');
+?>
 <main>
 
     <!doctype html>
