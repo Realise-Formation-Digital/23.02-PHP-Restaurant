@@ -1,4 +1,8 @@
-<?php require_once('./templates/header.php') ?>
+<?php 
+    session_start();
+    require_once('./templates/header.php') 
+
+?>
     <!--Partie principale du site-->
     <main>
 

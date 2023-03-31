@@ -1,2 +1,4 @@
-"username";"email";"password"
-"Florian";"flo@gmail.com";"e10adc3949ba59abbe56e057f20f883e"
+username;email;password;forgotten_password_token
+Florian;flo@gmail.com;e10adc3949ba59abbe56e057f20f883e;
+Félicien;felicien@champis.net;e10adc3949ba59abbe56e057f20f883e;
+Florian2;hvsahjv@klndvknd.com;621480ad20aaa824e06ee31ef6a3c548;

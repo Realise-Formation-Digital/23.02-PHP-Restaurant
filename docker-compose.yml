@@ -4,7 +4,7 @@ services:
   # `webserver` service provides Apache + PHP
   webserver:
     # Use custom image based on php-apache official image
-    image: php:8.2-apache
+    build: .
     container_name: php_web_resto
     # Run the services as the same user as the host's one, or as user with uid 1000
     user: "${UID:-1001}:${UID:-1001}"
@@ -17,4 +17,10 @@ services:
       - .:/var/www/html
     sysctls:
       # Allow OS to bind 80 port to unprivileged (eg. non-root) users
-      - net.ipv4.ip_unprivileged_port_start=0 
+      - net.ipv4.ip_unprivileged_port_start=0
+
+  maildev:
+    image: maildev/maildev
+    container_name: maildev
+    ports:
+      - "1080:1080"
