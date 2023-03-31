@@ -39,7 +39,7 @@
                                 <div class="input-group mb-3">
                                     <span class="input-group-text bg-primary"><i
                                             class="bi bi-key-fill text-white"></i></span>
-                                    <input name="newPassword" type="text" class="form-control" placeholder="New password">
+                                    <input name="newPassword" type="password" class="form-control" placeholder="New password">
                                 </div>
 
                                 <input name="token" type="hidden" value="<?php echo($token) ?>">
