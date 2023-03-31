@@ -71,7 +71,7 @@ if (isset($_POST['usernameEmail'])) {
 
         file_put_contents("../data/users.csv", "");
         //Récupérer le fichier csv users.csv et vérifier qu'il existe (lecture et écriture)
-        if (($usersCSV = fopen("../data/users.csv", "c+")) !== FALSE){
+        if (($usersCSV = fopen("../data/users.csv", "w")) !== FALSE){
         
             //Boucler dans newUsers et ajouter au CSV
             foreach($newUsers as $user){
