@@ -4,7 +4,19 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
     $username = htmlspecialchars($_POST['username']);
     $email = htmlspecialchars($_POST['email']);
     $password = $_POST['password'];
+    $hasError = false;
 
+    // Test username quality
+    if (!preg_match('/^()[0-9A-Za-z]{5,12}$/', $username)) {
+        $hasError = true;
+        $errusername = 'Username without Accents, spécial caraters and spaces please!';
+    }
+
+    //Test if username empty
+    if (empty($username)) {
+        $hasError = true;
+        $errusername = "This username is empty";
+    }
 
     // Test Password quality
     if (!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', $password)) {
@@ -12,14 +24,24 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
         $errpsw = 'the password does not meet the requirements!';
     }
 
+    //Test if password empty
+    if (empty($password)) {
+        $hasError = true;
+        $errpsw = "This password is empty";
+    }
+
     // Test email consistency
-    else if (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $email)) {
+    if (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $email)) {
         $hasError = true;
         $errmail = 'This is an invalid email.';
     }
 
+    //Test if email empty
+    if (empty($email)) {
+        $hasError = true;
+        $errmail = "This e-mail is empty";
+    }
 
-    $hasError = false;
     //Get csv file users.csv
     if (($List_CSV = fopen("../data/users.csv", "r")) !== FALSE) {
         //Read CSV file until the end
