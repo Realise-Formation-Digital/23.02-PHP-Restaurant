@@ -269,35 +269,24 @@
 
 
 
-        <!--Formulaire -->
+<!--Formulaire -->
 
-        <div class="container formul text-center">
-            <div class="row no-gutters">
-
-
-                <div class="col-md-3 col-sm-1 text-end">
-
-                    <img src="./img/assiette 2.png">
-
-                </div>
-
-                <div class="col-md-3 col-sm-1 text-start">
-
-                    <img src="./img/assiette 3.png">
-
-                </div>
-
-                <div class="col-md-6 col-sm-3">
-
-                    <h3 class="Menu-title Menu-title-bottom">Just the right food</h3>
-                    <p style="text-align:center;">
-                        <img src="img/dividergold.png" class="gold-divider" width="50%">
-                    </p>
-
-                    <div class="container formul text-center">
-
-                        <div id="ing">
-                            <p class="ingredients">
+<div class="container formul text-center">
+     <div class="row no-gutters">
+        <div class="col-md-3 col-sm-1 text-end">
+             <img src="./img/assiette 2.png">
+            </div>
+            <div class="col-md-3 col-sm-1 text-start">
+                 <img src="./img/assiette 3.png">
+            </div>
+             <div class="col-md-6 col-sm-3">
+             <h3 class="Menu-title Menu-title-bottom">Just the right food</h3>
+             <p style="text-align:center;">
+             <img src="img/dividergold.png" class="gold-divider" width="50%">
+             </p>
+            <div class="container formul text-center">
+            <div id="ing">
+            <p class="ingredients">
                                 If you’ve been to one of our restaurants, you’ve seen – and
                                 tasted – what keeps our customers coming back for more.
                                 Perfect materials and freshly baked food.
@@ -305,50 +294,73 @@
                                 us hard to resist! Stop in today and check us out! Perfect
                                 materials and freshly baked food.</p>
 
+            <!--intégre le code PHP dans le document logic/contact-->
+            <?php require_once('./logic_php/contact.php') ?>
 
-                            <div class="container formul text-start">
-                                <div class="row no-gutters">
+            <div class="container formul text-start">
+                <div class="row no-gutters">
 
-                                    <!-- NAME -->
+                    <!--formulaire de CONTACT-->
+                    <form id="contactForm" method="POST" action="./index.php#contactForm">
+                                    <!--NAME-->
                                     <div class="left-col-form col-md-6 col-sm-1 gold-text">
                                         <label for="reservationform" class="form-id"><b>Name</b></label>
-                                        <input type="email" class="form-control input-style" id="reservationform"
-                                            placeholder="your name ">
+                                        <input type="text" class="form-control input-style" id="reservationform"
+                                            placeholder="your name *" name="name">
+
+                                            <?php if (isset($nameError)) { ?>
+                                                <div><?php echo($nameError); ?></div>
+                                            <?php } ?>
+    
                                     </div>
-
-                                    <!-- Date -->
-                                    <div class="left-col-form col-md-6 col-sm-1 gold-text">
-                                        <label for="reservationform" class="form-id"><b>Date</b></label>
-                                        <input type="email" class="form-control input-style" id="reservationform"
-                                            placeholder="date">
-                                    </div>
-
-
-
                                     <!-- EMAIL -->
                                     <div class="right-col-form col-md-6 col-sm-1 gold-text">
                                         <label for="reservationform" class="form-id"><b>Email</b></label>
                                         <input type="email" class="form-control input-style" id="reservationform"
-                                            placeholder="your email *">
-                                    </div>
+                                            placeholder="your email *" name="email">
 
-                                    <!-- PARTY -->
+                                            <?php if (isset($emailError)) { ?>
+                                                <div><?php echo($emailError); ?></div>
+                                            <?php } ?>
+                                           
+
+                                    </div>
+                                    <!-- SUJET -->
                                     <div class="right-col-form col-md-6 col-sm-1 gold-text">
-                                        <label for="reservationform" class="form-id"><b>Party number</b></label>
-                                        <input type="email" class="form-control input-style" id="reservationform"
-                                            placeholder="party number">
+                                        <label for="reservationform" class="form-id"><b>Sujet</b></label>
+                                        <input type="text" class="form-control input-style" id="reservationform"
+                                            placeholder="subject *" name="sujet">
+
+                                            <?php if (isset($sujetError)) { ?>
+                                                <div><?php echo($sujetError); ?></div>
+                                            <?php } ?>
+
                                     </div>
+                                    </div>
+                                    <!-- MESSAGE -->
+                                    <div class="right-col-form col-md-6 col-sm-1 gold-text">
+                                        <label for="reservationform" class="form-id"><b>Message</b></label>
+                                        <textarea class="form-control input-style" id="reservationform"
+                                            placeholder="your message *" name="message"></textarea>
+                                            
+                                            <!--affichage de message d'erreur si le champ n'est pas rempli-->
+                                            <?php if (isset($messageError)) { ?>
+                                                <div><?php echo($messageError); ?></div>
+                                            <?php } ?>
 
-                                </div>
-                            </div>
+                                    </div>
+                                    <br>
+                                     <!--input de type submit--> 
+                                        <input type="submit" name="submit"></input>
+                                    <br>
 
-                        </div>
-                    </div>
+                                        <!--message de confirmation-->
+                                        <?php if (isset($confirmation)) { ?>
+                                            <div class="text-success"><?php echo($confirmation); ?></div>
+                                        <?php } ?>
+
+                    </form>
                 </div>
-                <!-- -------->
-
-
-
-
+            </div>
     </main>
 <?php require_once('./templates/footer.php') ?>
