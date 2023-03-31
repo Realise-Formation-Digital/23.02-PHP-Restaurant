@@ -306,7 +306,7 @@
                                     <div class="left-col-form col-md-6 col-sm-1 gold-text">
                                         <label for="reservationform" class="form-id"><b>Name</b></label>
                                         <input type="text" class="form-control input-style" id="reservationform"
-                                            placeholder="your name *" name="name">
+                                            placeholder="your name *" name="name" value="<?php if (isset($name)) { echo($name); } ?>">
 
                                             <?php if (isset($nameError)) { ?>
                                                 <div><?php echo($nameError); ?></div>
@@ -317,7 +317,7 @@
                                     <div class="right-col-form col-md-6 col-sm-1 gold-text">
                                         <label for="reservationform" class="form-id"><b>Email</b></label>
                                         <input type="email" class="form-control input-style" id="reservationform"
-                                            placeholder="your email *" name="email">
+                                            placeholder="your email *" name="email" value="<?php if (isset($email)) { echo($email); } ?>">
 
                                             <?php if (isset($emailError)) { ?>
                                                 <div><?php echo($emailError); ?></div>
@@ -329,7 +329,7 @@
                                     <div class="right-col-form col-md-6 col-sm-1 gold-text">
                                         <label for="reservationform" class="form-id"><b>Sujet</b></label>
                                         <input type="text" class="form-control input-style" id="reservationform"
-                                            placeholder="subject *" name="sujet">
+                                            placeholder="subject *" name="sujet" value="<?php if (isset($sujet)) { echo($sujet); } ?>">
 
                                             <?php if (isset($sujetError)) { ?>
                                                 <div><?php echo($sujetError); ?></div>
@@ -341,7 +341,7 @@
                                     <div class="right-col-form col-md-6 col-sm-1 gold-text">
                                         <label for="reservationform" class="form-id"><b>Message</b></label>
                                         <textarea class="form-control input-style" id="reservationform"
-                                            placeholder="your message *" name="message"></textarea>
+                                            placeholder="your message *" name="message"><?php if (isset($message)) { echo($message); } ?></textarea>
                                             
                                             <!--affichage de message d'erreur si le champ n'est pas rempli-->
                                             <?php if (isset($messageError)) { ?>
