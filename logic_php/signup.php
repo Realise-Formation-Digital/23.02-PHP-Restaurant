@@ -1,8 +1,10 @@
 <?php
 
+require_once("../services/testinput.php");
+
 if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])) {
-    $username = htmlspecialchars($_POST['username']);
-    $email = htmlspecialchars($_POST['email']);
+    $username = test_input($_POST['username']);
+    $email = test_input($_POST['email']);
     $password = $_POST['password'];
     $hasError = false;
 
