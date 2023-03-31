@@ -1,4 +1,7 @@
 <?php
+
+require_once("./services/testinput.php");
+
 /*Quand le bouton submit activé  --
 1) si il n'y a aucune erreurs - affiche le message de confirmation
 2) si un champ ou plusieurs n'est pas rempli - affiche message d'erreur à chaque champ non-remplis*/   
@@ -9,7 +12,7 @@ if (isset($_POST['submit'])) {
     /*verifie si champ "name" a été rempli 
     et enregistre la donnée dans CSV*/ 
     if (isset($_POST['name'])) {
-        $name = $_POST['name'];
+        $name = test_input($_POST['name']);
         $data[] = $name;
     
     /*si le champ n'est pas rempli, message d'erreur*/
@@ -22,7 +25,7 @@ if (isset($_POST['submit'])) {
     /*si champ "email" rempli
     enregistre la donnée dans CSV*/
     if (isset($_POST['email'])) {
-        $email = $_POST['email'];
+        $email = test_input($_POST['email']);
         $data[] = $email;
 
         /*validation de structure de l'e-mail*/
@@ -41,7 +44,7 @@ if (isset($_POST['submit'])) {
     /*si champ "sujet" rempli
     enregistre la donnée dans CSV*/
     if (isset($_POST['sujet'])) {
-        $sujet = $_POST['sujet'];
+        $sujet = test_input($_POST['sujet']);
         $data[] = $sujet;
 
         /*si le champ n'est pas rempli, message d'erreur*/
@@ -54,7 +57,7 @@ if (isset($_POST['submit'])) {
     /*si champ "message" rempli
     enregistre la donnée dans CSV*/
     if (isset($_POST['message'])) {
-        $message = $_POST['message'];
+        $message = test_input($_POST['message']);
         $data[] = $message;
         
 

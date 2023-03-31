@@ -359,10 +359,6 @@
                                             <div class="text-success"><?php echo($confirmation); ?></div>
                                         <?php } ?>
 
-                                        <!--message d'erreur-->
-                                        <?php if (isset($haserror)) { ?>
-                                            <div class="text-warning"><?php echo($hasError); ?></div>
-                                        <?php } ?>
                     </form>
                 </div>
             </div>

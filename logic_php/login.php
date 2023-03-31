@@ -1,5 +1,7 @@
 <?php
 
+require_once("../services/testinput.php");
+
 if (isset($_POST['username']) && isset($_POST['password'])){
 
     //Recover username and password
