@@ -23,6 +23,9 @@
                         <p style="text-align:center">
                             <img src="../img/dividergold.png" class="gold-divider" width="50%">
                         </p>
+                        <?php if (isset($errusername)) { ?>
+                            <h4 class="alert alert-danger" role="alert"><?php echo ($errusername) ?></h4>
+                        <?php } ?>
                         <?php if (isset($errpsw)) { ?>
                             <h4 class="alert alert-danger" role="alert"><?php echo ($errpsw) ?></h4>
                         <?php } ?>
