@@ -26,3 +26,17 @@ Le serveur utilisé est un serveur Apache avec PHP 8.2. Il est lancé grâce à 
 - Composer: https://getcomposer.org/ (gestionnaire de dépendances PHP installé via Dockerfile)
 - MailDev: https://hub.docker.com/r/maildev/maildev (serveur mail de développement installé via docker)
 - PHPMailer: https://github.com/PHPMailer/PHPMailer (dépendance installée avec composer)
+
+## Flow charts
+
+### Flow chart Sign up
+
+![Sign up](./Documentation/flowcharts/SignUp.drawio.svg)
+
+### Flow chart Login
+
+![Login](./Documentation/flowcharts/Login.drawio.svg)
+
+### Flow chart Contact
+
+![Contact](./Documentation/flowcharts/Contact.drawio.svg)
