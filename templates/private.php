@@ -9,18 +9,18 @@
         
         <h3 class="text-center mb-5">Messages:</h3>
 
-        <div class="container-md">
-            <div class="row">
-              <div class="col-2 border border-dark m-2 text-center">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col col-sm-1 border border-opacity-50 border-dark m-2 text-center">
                 <strong>Name</strong>
               </div>
-              <div class="col-2 border border-dark m-2 text-center">
+              <div class="col col-sm-3 border border-opacity-50 border-dark m-2 text-center">
                 <strong>E-mail</strong>
               </div>
-              <div class="col-2 border border-dark m-2 text-center">
+              <div class="col col-sm-1 border border-opacity-50 border-dark m-2 text-center">
                 <strong>Subject</strong>
               </div>
-              <div class="col-5 border border-dark m-2 text-center">
+              <div class="col col-sm-5 border border-opacity-50 border-dark m-2 text-center">
                 <strong>Message</strong>
               </div>
             </div>
@@ -30,18 +30,18 @@
         <?php foreach($messages as $key => $message){ 
             if ($key != 0) {
         ?>
-          <div class="container-md">
-            <div class="row">
-              <div class="col-2 border border-dark m-2 text-center">
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col col-sm-1 border border-opacity-50 border-dark m-2 text-center">
               <?php echo($message[0]); ?>
               </div>
-              <div class="col-2 border border-dark m-2 text-center">
-              <?php echo($message[1]); ?>
+              <div class="col col-sm-3 border border-opacity-50 border-dark m-2 text-center">
+              <a href="mailto:<?php echo($message[1])?>"><?php echo(substr($message[1], 0, 10)); ?>...</a>
               </div>
-              <div class="col-2 border border-dark m-2 text-center">
+              <div class="col col-sm-1 border border-opacity-50 border-dark m-2 text-center">
               <?php echo($message[2]); ?>
               </div>
-              <div class="col-5 border border-dark m-2 text-center">
+              <div class="col col-sm-5 border border-opacity-50 border-dark m-2 text-center">
               <?php echo($message[3]); ?>
               </div>
             </div>
