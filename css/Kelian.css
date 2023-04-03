@@ -1,0 +1,59 @@
+/* Titre */
+h1.h1-kelian {
+    color: #cf9e00;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.body-kelian {
+    height: 750px;
+    background-image: url('../img/kelian-bg.jpg');
+    background-repeat: repeat;
+    
+}
+
+.body-kelian .row {
+    display: flex;
+}
+
+/* aragraphe et h1 */
+.h1-kelian,.textcontent-kelian {
+    position: relative;
+}
+
+.h1-kelian {
+    left: 500px;
+    top: 120px;
+}
+
+/* mes Paragraphes */
+.textcontent-kelian {
+    line-height: 15px;
+    left : 440px ;
+    top : 40px ;
+    font-size: 23px;
+    font-weight: 360;
+}
+
+/* dernier paragraphe */
+.p-center-kelian {
+    padding-left: 110px;
+}
+
+.img-2-kelian {
+    padding-left :230px ;;
+    padding-top: 30px;
+}
+
+.img-3-kelian{
+    padding-top: 100px;
+    padding-left: 110px;
+    box-shadow: none;
+}
+
+.img-4-kelian {
+    
+    padding-left: 580px;
+    padding-top: 130px;
+    height: 22%;
+}

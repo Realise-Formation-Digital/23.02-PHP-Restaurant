@@ -1,0 +1,193 @@
+/* GENERAL SETTINGS -------------------------- */
+
+/* Applique la propriété border box au HTML */
+*{
+  box-sizing: border-box;
+}
+
+/* GENERAL SETTINGS -------------------------- */
+
+/* POLICES ------------------------------------- */
+
+/* Police d'écriture de la page */
+body {
+  font-family: 'Overload', sans-serif;
+}
+
+/* Police d'écriture de titre*/
+
+h1 {
+  font-family: 'Rosmatika', sans-serif;
+}
+
+/* // POLICES ------------------------------------- */
+
+
+/* Style de la barre de navigation -----------------*/
+
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 30px;
+  text-decoration: none;
+}
+
+nav ul li a:hover, nav ul li a.active {
+  border-top: 2px solid #ffffff;
+}
+
+/* // Style de la barre de navigation --------------*/
+
+/* Style du header ---------------------------------*/
+
+header {
+    min-height: 600px;
+    position: relative;
+    background-color: #f1f1f1;
+    padding: 2em;
+    text-align: center;
+    background-image: url("/img/header.jpg");
+    background-position: center center; 
+    background-size: 100% 100%; 
+}
+
+/* // Style du header ---------------------------------*/
+
+
+/* Style font awesome social icons -------------------*/
+.fa {
+  padding: 20px;
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* hover effect */
+.fa:hover {
+opacity: 0.7;
+}
+
+/* couleur d'îcones spécifique */
+
+/* Facebook */
+.fa-facebook {
+background: none;
+color: #cf9e00;
+}
+
+/* Youtube */
+.fa-youtube {
+background: none;
+color: #cf9e00;
+}
+
+/* Twitter */
+.fa-twitter {
+background: none;
+color: #cf9e00;
+}
+
+/* // Style font awesome social icons -------------------*/
+
+/*GROS TITRE PRINCIPAL----------------------------------*/
+
+header .main-title {
+  color: white;
+  padding-top: 80px;
+}
+
+/* //GROS TITRE PRINCIPAL----------------------------------*/
+
+/*Séparateur Blanc ---------------------------------------*/
+
+.divider {
+  color: #fff;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 180px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* // Séparateur Blanc ---------------------------------------*/
+
+/*Bouton du header -----------------------------------------*/
+
+.head-button {
+  padding-top: 20px;
+}
+
+/* // Bouton du header -----------------------------------------*/
+
+
+
+
+/*FOOTER---------------------------------------------*/
+
+footer {
+  background-color: black;
+  color: white;
+}
+
+/* En-têtes */
+.footer-h4-1 {
+  padding-left: 60px;
+}
+
+.footer-h4-2 {
+  padding-left: 20px;
+}
+
+.footer-h4-3 {
+  padding-left: 20px;
+}
+
+
+/* divider */
+.divider-footer-1 {
+  width : 60%;
+}
+
+.divider-footer-2 {
+  width: 60%;
+}
+
+.divider-footer-3 {
+  width: 60%;
+}
+
+/* Paragraphes */
+
+.footer-p-1 {
+  padding-right: 160px;
+  text-align: center;
+}
+
+.footer-p-2 {
+  padding-left: 20px;
+}
+
+.footer-p-3 {
+  padding-left: 20px;
+}
+
+
+footer {
+  font-size: 10px;
+}
+/*FOOTER---------------------------------------------*/

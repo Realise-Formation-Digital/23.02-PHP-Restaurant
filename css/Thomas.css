@@ -1,0 +1,56 @@
+/* Menu Section */
+
+
+#Menu {
+    background: url(img/bg-menu.jpg) repeat;
+    min-height: 994px;
+}
+
+#Menu-content-container {
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+
+
+#left-menu {
+    min-height: 794px;
+}
+
+#right-menu {
+    min-height: 520px;
+}
+
+.Menu-title {
+    font-size: 40px;
+    color: #c90;
+    text-align: center;
+    font-family: "Yeseva";
+}
+
+.Menu-title-bottom {
+    padding-top: 40px;
+}
+
+.flex-container {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    width: auto;
+    text-align: center;
+    font-family: "Yeseva";
+    color: #c90;
+    font-size: 21px;
+}
+
+.separator {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.ingredients {
+    font-family: "Lato";
+    font-size: 17px;
+    padding-bottom: 10px;
+}
